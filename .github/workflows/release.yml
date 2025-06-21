@@ -13,7 +13,7 @@ jobs:
   create-release:
     strategy:
       matrix:
-        os: [ubuntu-22.04]
+        os: [ubuntu-20.04]
     runs-on: ${{ matrix.os }}
     name: create-release
     steps:
@@ -51,7 +51,7 @@ jobs:
       PKG_VER: ${{needs.create-release.outputs.pkg_ver}}
     strategy:
       matrix:
-        os: [ubuntu-22.04, ubuntu-22.04-arm]
+        os: [ubuntu-20.04]
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
